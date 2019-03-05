@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:700|Rammetto+One");
+
+body {
+  background-color: #f0f0f0;
+}
+h1 {
+  font-family: "Noto Serif", serif;
+}
+.big-hero {
+  background-image: url(../../images/bgHero.png);
+  background-position: left center;
+  background-size: cover;
+  padding-bottom: 3rem;
+  background-repeat: no-repeat;
+}
+.tiles {
+  background-color: white;
+  padding: 1rem;
+  z-index: 100;
+  margin-top: -10rem;
+  border-radius: 10px;
+  transition: box-shadow 0.5s ease;
+}
+.skills {
+  background-color: white;
+  padding: 1rem;
+  z-index: 100;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  transition: box-shadow 0.5s ease;
+}
+.card {
+  transition: box-shadow 0.5s ease;
+}
+.skills:hover,
+.tiles:hover,
+.portfolio .card:hover {
+  box-shadow: 0px 0px 3px 2px #808080;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-bottom: 3rem;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.grid2 img {
+  width: 80px;
+  margin: auto;
+}
+@media screen and (min-device-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-device-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact {
+  background-color: #cc2936;
+  border-radius: 0 1000px 1000px 0;
+  width: 25%;
+  height: 300px;
+  overflow: auto;
+  float: left;
+}
+.aboutMe {
+  background-color: #0d7ba2;
+  margin-left: auto;
+  width: 65%;
+  height: 300px;
+  border-radius: 1000px 0 0 1000px;
+  overflow: auto;
+}
+.aboutMe h1 {
+  font-size: 2rem;
+}
+/* .skills h1 {
+  font-size: 5rem;
+  color: #f0f0f0;
+  float: right;
+  margin-top: -6rem;
+} */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #f0f0f0;
+  padding: 1rem 0;
+  float: left;
+}
+.vertical-textalt {
+  float: right;
+}
+.slider {
+  padding: 2rem 6rem 2rem 0;
+}
+.mai {
+  margin: auto;
+}
+.slider li {
+  color: #f0f0f0;
+}
+/* .ulrtl {
+  direction: rtl;
+  text-align: right;
+} */
+.iomi {
+  width: 150px;
+  float: left;
+  margin: 50px;
+}
+.sss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: inherit;
+}
+.aboutMeP {
+  text-align: justify;
+  color: #f0f0f0;
+}
+
+footer {
+  background-color: #08415c;
+  padding: 0.75rem;
+  color: #f0f0f0;
+  margin-top: 1rem;
+}
+.post {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 15px;
+  text-align: justify;
+}
+.blog-title {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 15px;
+
+  margin: 2rem 0;
+}
+.herotitle {
+  font-family: "Rammetto One", cursive !important;
+  margin-top: -80px;
+}
+.herotitle h2 {
+  font-size: 3rem;
+}
+.herotitle h3 {
+  font-size: 2rem;
+}
+.ss2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
