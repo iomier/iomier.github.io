@@ -8,9 +8,9 @@ const aboutMe = ({ data }) => {
         <div className="">
           <img className="iomi" src={iomiPng} alt="iomi" />
         </div>
-        <div className="slider">
+        <div className="aboutMeP">
           <h1>About Me...</h1>
-          <p className="aboutMeP">
+          <p>
             My name is Iman Omidi and i have studied translation studies in
             Kharazmi University. I was always interested in Tech and programming
             therefore i started fiddling with html and css from early ages. i

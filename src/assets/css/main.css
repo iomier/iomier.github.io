@@ -1,4 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Serif:700|Rammetto+One");
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes pull-up {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: -17.5rem;
+  }
+}
 
 body {
   background-color: #f0f0f0;
@@ -17,9 +58,12 @@ h1 {
   background-color: white;
   padding: 1rem;
   z-index: 100;
-  margin-top: -10rem;
   border-radius: 10px;
   transition: box-shadow 0.5s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-name: pull-up;
+  animation-duration: 3s;
 }
 .skills {
   background-color: white;
@@ -98,14 +142,14 @@ h1 {
   float: right;
 }
 .slider {
-  padding: 2rem 6rem 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 1rem;
 }
 .mai {
   margin: auto;
 }
-.slider li {
-  color: #f0f0f0;
-}
+
 /* .ulrtl {
   direction: rtl;
   text-align: right;
@@ -125,14 +169,9 @@ h1 {
 .aboutMeP {
   text-align: justify;
   color: #f0f0f0;
+  padding-right: 1rem;
 }
 
-footer {
-  background-color: #08415c;
-  padding: 0.75rem;
-  color: #f0f0f0;
-  margin-top: 1rem;
-}
 .post {
   padding: 1rem;
   background-color: white;
@@ -149,6 +188,9 @@ footer {
 .herotitle {
   font-family: "Rammetto One", cursive !important;
   margin-top: -80px;
+  animation-name: flipInX;
+  backface-visibility: hidden;
+  animation-duration: 4s;
 }
 .herotitle h2 {
   font-size: 3rem;
@@ -160,4 +202,21 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Footer */
+footer {
+  background-color: #08415c;
+  padding: 0.75rem;
+  color: #f0f0f0;
+  margin-top: 1rem;
+}
+footer img,
+footer a {
+  height: 20px;
+  margin: 0 0.5rem;
+  color: white;
+}
+.pull {
+  float: right;
 }
