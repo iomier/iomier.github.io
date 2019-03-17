@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import Container from "react-bootstrap/Container"
 import Card from "react-bootstrap/Card"
@@ -12,7 +11,7 @@ import webPng from "../images/web.png"
 import layoutPng from "../images/layout.png"
 import progPng from "../images/prog.png"
 import transPng from "../images/trans.png"
-import { Img } from "gatsby-image"
+
 const tilesData = [
   {
     id: 1,
@@ -55,7 +54,6 @@ const tilesData = [
   },
 ]
 const tiles = ({ data }) => {
-  console.log(data)
   return (
     <Container className="justify-content-center tiles">
       <Row>
@@ -79,25 +77,11 @@ const tiles = ({ data }) => {
               <Card.Title>{tile.name}</Card.Title>
               <Card.Text>{tile.text}</Card.Text>
             </Card.Body>
-            {/* <Img fixed={data.file.childImageSharp.fixed} /> */}
           </Card>
         ))}
       </div>
     </Container>
   )
 }
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "images/bgHero.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 export default tiles

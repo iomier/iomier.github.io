@@ -24,6 +24,11 @@ const portfolio = ({ data }) => {
                   excerpt
                   feature {
                     publicURL
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
                   }
                 }
               }
@@ -34,34 +39,35 @@ const portfolio = ({ data }) => {
       render={data => (
         <Container className="justify-content-center mb-3 portfolio">
           <Row>
-            <Col>
+            <Col className="portfo">
               <h1 className="text-center mb-3" id="port">
                 Portfolio
               </h1>
+              <div className="grid">
+                {data.allMarkdownRemark.edges.map(edge => (
+                  <Card
+                    key={edge.node.id}
+                    style={{ border: "none" }}
+                    className="m-1"
+                  >
+                    <Card.Img
+                      variant="top"
+                      src={
+                        edge.node.frontmatter.feature.childImageSharp.fluid.src
+                      }
+                    />
+                    <Card.Body>
+                      <Card.Title>
+                        <Link to={edge.node.frontmatter.path}>
+                          {edge.node.frontmatter.title}
+                        </Link>
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                ))}
+              </div>
             </Col>
           </Row>
-          <div className="grid">
-            {data.allMarkdownRemark.edges.map(edge => (
-              <Card
-                key={edge.node.id}
-                style={{ border: "none" }}
-                className="text-center mr-2"
-              >
-                <Card.Img
-                  variant="top"
-                  src={edge.node.frontmatter.feature.publicURL}
-                />
-                <Card.Body>
-                  <Card.Title>
-                    <Link to={edge.node.frontmatter.path}>
-                      {edge.node.frontmatter.title}
-                    </Link>
-                  </Card.Title>
-                  <Card.Text>{edge.node.frontmatter.excerpt}</Card.Text>
-                </Card.Body>
-              </Card>
-            ))}
-          </div>
         </Container>
       )}
     />

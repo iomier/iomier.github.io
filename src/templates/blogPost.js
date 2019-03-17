@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 
 import Header from "../components/header"
+import Footer from "../components/footer"
 
 const Template = ({ data }) => {
   const post = data.markdownRemark
@@ -14,26 +15,29 @@ const Template = ({ data }) => {
       <Header />
       <Container>
         <Row>
-          <Col>
-            <div>
+          <Col md="9" className="mt-3" style={{ margin: "auto" }}>
+            <>
               <div className="blog-title ">
+                <h2 className="text-center rommetto">
+                  {post.frontmatter.title}
+                </h2>
+
                 <img
                   className="card-img-top"
-                  style={{ height: "70vh" }}
                   src={post.frontmatter.feature.childImageSharp.fluid.src}
                   alt=""
                 />
-                <h2 className="text-center mt-3 ">{post.frontmatter.title}</h2>
               </div>
 
               <div
                 className="post"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-            </div>
+            </>
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   )
 }
@@ -49,7 +53,7 @@ export const blogPostQuery = graphql`
         feature {
           publicURL
           childImageSharp {
-            fluid {
+            fluid(maxHeight: 500) {
               src
             }
           }

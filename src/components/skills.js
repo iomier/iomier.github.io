@@ -72,7 +72,9 @@ const skills = ({ data }) => {
     <Container className="justify-content-center skills">
       <Row>
         <Col>
-          <h1 className="text-center my-3">What I Know..</h1>
+          <h1 className="text-center my-3" id="wik">
+            What I Know..
+          </h1>
         </Col>
       </Row>
       <div className="grid2">
