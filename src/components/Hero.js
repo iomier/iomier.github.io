@@ -8,8 +8,8 @@ const Hero = ({ data }) => {
       <div className="text-center ss2" style={{ height: "90vh" }}>
         <div className="herotitle">
           {console.log(data)}
-          <h2>Hello There...</h2>
-          <h3>Welcome to iomi.ir</h3>
+          <h2>Welcome to iomi.ir</h2>
+          <h3>Iman Omidi, Junior Frontend Developer</h3>
         </div>
       </div>
     </div>
