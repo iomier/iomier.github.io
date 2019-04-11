@@ -1,81 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Serif:700|Rammetto+One");
-@keyframes flipInX {
-  from {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  to {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
+body {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(111, 219, 246, 0.54) 0%,
+    rgba(111, 219, 246, 0.64) 21%,
+    rgba(109, 102, 183, 1) 100%
+  );
 }
 
-@keyframes pull-up {
-  0% {
-    margin-top: 0;
-  }
-  100% {
-    margin-top: -17.5rem;
-  }
-}
 html {
   scroll-behavior: smooth;
-}
-body {
-  background-color: #f0f0f0;
 }
 h1 {
   font-family: "Noto Serif", serif;
 }
-.big-hero {
-  background-image: url(../../images/bgHero.png);
-  background-position: left center;
-  background-size: cover;
-  padding-bottom: 3rem;
-  background-repeat: no-repeat;
-}
-.tiles {
-  background-color: white;
-  padding: 1rem;
-  z-index: 100;
-  border-radius: 10px;
-  transition: box-shadow 0.5s ease;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-  animation-name: pull-up;
-  animation-duration: 3s;
-}
-.skills {
-  background-color: white;
-  padding: 1rem;
-  z-index: 100;
-  border-radius: 10px;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-  transition: box-shadow 0.5s ease;
-}
+
 .card {
   transition: box-shadow 0.5s ease;
 }
@@ -89,143 +28,15 @@ h1 {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-bottom: 3rem;
 }
-.grid2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-.grid2 img {
-  width: 80px;
-  margin: auto;
-}
-@media screen and (min-device-width: 760px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (min-device-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-.contact {
-  background-color: #cc2936;
-  border-radius: 0 1000px 1000px 0;
-  width: 25%;
-  height: 300px;
-  overflow: auto;
-  float: left;
-}
-.aboutMe {
-  background-color: #0d7ba2;
-  margin-left: auto;
-  width: 65%;
-  height: 300px;
-  border-radius: 1000px 0 0 1000px;
-  overflow: auto;
-}
-.aboutMe h1 {
-  font-size: 2rem;
-}
-/* .skills h1 {
-  font-size: 5rem;
-  color: #f0f0f0;
-  float: right;
-  margin-top: -6rem;
-} */
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  color: #f0f0f0;
-  padding: 1rem 0;
-  float: left;
-}
-.vertical-textalt {
-  float: right;
-}
-.slider {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 0 1rem;
-}
-.mai {
-  margin: auto;
-}
-
-/* .ulrtl {
-  direction: rtl;
-  text-align: right;
-} */
-.iomi {
-  width: 150px;
-  float: left;
-  margin: 50px;
-}
-.sss {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: left;
-  height: inherit;
-}
 .aboutMeP {
   text-align: justify;
   color: #f0f0f0;
   padding-right: 1rem;
 }
-
-.post {
-  padding: 1rem;
-  background-color: white;
-  border-radius: 15px;
-  text-align: justify;
-}
-.blog-title {
-  padding: 1rem;
-  background-color: white;
-  border-radius: 15px;
-
-  margin: 2rem 0;
-}
 .rommetto {
   font-family: "Noto Serif", cursive !important;
 }
-.herotitle {
-  font-family: "Rammetto One", cursive !important;
-  margin-top: -80px;
-  animation-name: flipInX;
-  backface-visibility: hidden;
-  animation-duration: 4s;
-}
-.herotitle h2 {
-  font-size: 3rem;
-}
-.herotitle h3 {
-  font-size: 2rem;
-}
-.ss2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .portfo {
-  padding: 1em;
-  border-radius: 10px;
-  background-color: white;
-}
-/* Footer */
-footer {
-  background-color: #08415c;
-  padding: 0.75rem;
-  color: #f0f0f0;
-  margin-top: 1rem;
-}
-footer img,
-footer a {
-  height: 20px;
-  margin: 0 0.5rem;
-  color: white;
-}
-.pull {
-  float: right;
+  background-color: #fff;
 }

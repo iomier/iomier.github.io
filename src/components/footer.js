@@ -1,28 +1,25 @@
 import React from "react"
-
-import gmailSvg from "../images/gmail.svg"
-import telegramSvg from "../images/telegram.svg"
-import githubSvg from "../images/github.svg"
+import styled from "styled-components"
 
 function footer() {
   return (
-    <footer>
+    <StFooter>
       © {new Date().getFullYear()}, Built with
       <a href="https://www.gatsbyjs.org"> Gatsby</a>
-      <div className="pull">
-        <a href="http://github.com">
-          <img src={githubSvg} alt="github profile" /> Github
-        </a>
-        <a href="http://github.com">
-          <img src={telegramSvg} alt="github profile" />
-          @iomier
-        </a>
-        <a href="http://github.com">
-          <img src={gmailSvg} alt="github profile" /> omidi.iman@gmail.com
-        </a>
-      </div>
-    </footer>
+    </StFooter>
   )
 }
 
 export default footer
+
+const StFooter = styled.footer`
+  color: #eee;
+  background-color: Black;
+  margin: 0 0 25px 0;
+  padding: 1em 1.5em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  span {
+    text-align: center;
+  }
+`

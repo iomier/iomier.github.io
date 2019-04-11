@@ -1,32 +1,11 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import NavBar from "./utils/NavBar"
 import React from "react"
-
-// import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
-// import Form from "react-bootstrap/Form"
-// import Button from "react-bootstrap/Button"
-// import FormControl from "react-bootstrap/FormControl"
-
+import styled from "styled-components"
 const Header = ({ siteTitle }) => (
-  <header>
-    <Nav className="justify-content-center fixed-top bg-light">
-      <Link className="nav-link" to="/">
-        Home
-      </Link>
-
-      <Link className="nav-link" to="#wid">
-        What I Do
-      </Link>
-      <Link className="nav-link" to="#wik">
-        What I Know
-      </Link>
-      <Link className="nav-link" to="#port">
-        Portfolio
-      </Link>
-      <Nav.Link href="/appList">GitHub Demo Apps</Nav.Link>
-    </Nav>
-  </header>
+  <StHeader>
+    <NavBar siteTitle={siteTitle} />
+  </StHeader>
 )
 
 Header.propTypes = {
@@ -38,3 +17,11 @@ Header.defaultProps = {
 }
 
 export default Header
+const StHeader = styled.header`
+  color: #eee;
+  background-color: Black;
+  margin: 25px 0 0 0;
+  padding: 2em 1.5em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`

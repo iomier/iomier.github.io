@@ -1,19 +1,47 @@
 import React from "react"
-// import { graphql, StaticQuery } from "gatsby"
-// import Img from "gatsby-image"
-
-const Hero = ({ data }) => {
+import pic2 from "../images/pic2.jpg"
+import styled, { keyframes } from "styled-components"
+import SocialBar from "./utils/SocialBar"
+const Hero = props => {
   return (
-    <div className="big-hero">
-      <div className="text-center ss2" style={{ height: "90vh" }}>
-        <div className="herotitle">
-          {console.log(data)}
-          <h2>Welcome to iomi.ir</h2>
-          <h3>Iman Omidi, Junior Frontend Developer</h3>
-        </div>
-      </div>
-    </div>
+    <>
+      <StHero>
+        <h2>Carpe Diem</h2>
+      </StHero>
+      <SocialBar />
+    </>
   )
 }
 
 export default Hero
+const focusBck = keyframes`
+0% {
+    letter-spacing: 1em;
+    transform: translateZ(300px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(12px);
+    filter: blur(0);
+    opacity: 1;
+  }`
+const StHero = styled.div`
+  background-color: #bada55;
+  width: inherit;
+  height: 60vh;
+  padding: 0;
+  background-image: url(${pic2});
+  background-position: top;
+  background-size: cover;
+  h2 {
+    color: white;
+    margin: auto;
+    font-size: 3em;
+    display: table;
+    position: relative;
+    top: 40%;
+    transform: perspective(1px) translateY(-50%);
+    animation: ${focusBck} 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  }
+`

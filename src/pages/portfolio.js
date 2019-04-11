@@ -3,7 +3,7 @@ import React from "react"
 
 import Header from "../components/header"
 import SEO from "../components/seo"
-import Portfolio from "../components/portfolio"
+import Portfolio from "../components/Main/portfolio"
 
 const SecondPage = () => (
   <>

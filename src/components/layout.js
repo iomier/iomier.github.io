@@ -8,17 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
-import Tiles from "./tiles"
 import Hero from "./Hero"
-import Contact from "./contact"
 
-// import "./layout.css"
 import AboutMe from "./aboutMe"
-import Portfolio from "./portfolio"
-import Skills from "./skills"
 import Footer from "./footer"
+import Main from "./Main"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,17 +29,14 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <StHome>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Hero />
-        <Tiles />
-        <Skills />
-        <Portfolio />
-        <Contact />
         <AboutMe />
+        <Main />
         <div>{children}</div>
         <Footer />
-      </>
+      </StHome>
     )}
   />
 )
@@ -52,3 +46,9 @@ Layout.propTypes = {
 }
 
 export default Layout
+const StHome = styled.div`
+  width: 65vw;
+  margin: 0 auto;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+`

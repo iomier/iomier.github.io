@@ -1,26 +1,109 @@
 import React from "react"
-
-import iomiPng from "../images/iomi.png"
-const aboutMe = ({ data }) => {
+import styled from "styled-components"
+import iomi from "../images/iomi.png"
+import { UserGraduate, IdBadge } from "styled-icons/fa-solid/"
+import Headline from "./utils/Headline"
+const AboutMe = props => {
   return (
-    <>
-      <div className="aboutMe ss2">
-        <div className="">
-          <img className="iomi" src={iomiPng} alt="iomi" />
-        </div>
-        <div className="aboutMeP">
-          <h1>About Me...</h1>
-          <p>
-            My name is Iman Omidi and i have studied translation studies in
-            Kharazmi University. I was always interested in Tech and programming
-            therefore i started fiddling with html and css from early ages. i
-            have worked with various CMS such as Wordpress and Joomla then I
-            started learning Javascript and consequently ReactJs and GatsbyJs.
-          </p>
-        </div>
-      </div>
-    </>
+    <StAboutMe>
+      <Headline title="About Me" />
+      <StFlex>
+        <StItem style={{ textAlign: "center" }}>
+          <img src={iomi} alt="iman omidi" width="150px" />
+          <h3>Iman Omidi</h3>
+          <h5 style={{ padding: 0 }}>Junior Frontend Developer</h5>
+        </StItem>
+        <StItem>
+          <h3>
+            <UserGraduate />
+            Education:
+          </h3>
+          <ul>
+            <li>Bachelor:</li>
+            Translation Studies
+            <br />
+            University of Isfahan
+            <li>M.A:</li>
+            Translation Studies
+            <br />
+            Kharazmi University of Tehran
+          </ul>
+        </StItem>
+        <StItem>
+          <h3>
+            <IdBadge />
+            Contact Info:
+          </h3>
+          <ul>
+            <li>
+              Age: <span>26</span>
+            </li>
+            <li>
+              Residence: <span>Iran</span>
+            </li>
+            <li>
+              Email:{" "}
+              <a href="mailto://omidi.iman@gmail.com">Omidi.iman@gmail.com</a>
+            </li>
+            <li>
+              Phone: <span>+989214544518</span>
+            </li>
+            <li>
+              Resume: <span>Jobinja</span>
+            </li>
+          </ul>
+        </StItem>
+      </StFlex>
+    </StAboutMe>
   )
 }
 
-export default aboutMe
+export default AboutMe
+
+const StAboutMe = styled.div`
+  background-color: #eee;
+  padding: 1px 0 0 0;
+  margin: -1px auto 0 auto;
+`
+const StItem = styled.div`
+  background-color: inherit;
+  margin: 0 auto;
+  flex: 1;
+  padding: 1em 0;
+  svg {
+    width: 15px;
+    margin-right: 5px;
+  }
+  li {
+    font-weight: 600;
+    padding: 0.5em 0;
+  }
+  a {
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #bada55;
+  }
+  span {
+    font-weight: 400;
+  }
+  img {
+    filter: grayscale(60);
+    transition: 0.3s;
+  }
+  img:hover {
+    filter: grayscale(0);
+  }
+`
+const StFlex = styled.div`
+  background-color: #fff;
+  align-items: stretch;
+  padding: 0;
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
