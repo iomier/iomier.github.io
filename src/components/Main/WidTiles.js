@@ -51,11 +51,9 @@ const tilesData = [
 ]
 const WidTiles = () => {
   return (
-    <>
-      <StWidTiles>
-        <Tiles tilesData={tilesData} />
-      </StWidTiles>
-    </>
+    <StWidTiles>
+      <Tiles tilesData={tilesData} inputWidth="350px" />
+    </StWidTiles>
   )
 }
 

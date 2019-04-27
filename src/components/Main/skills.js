@@ -80,7 +80,7 @@ const skillsList = [
 const WikTiles = () => {
   return (
     <StWikTiles>
-      <Tiles tilesData={skillsList} inputWidth="150px" wik={true} />
+      <Tiles tilesData={skillsList} inputWidth="140px" wik={true} />
     </StWikTiles>
   )
 }

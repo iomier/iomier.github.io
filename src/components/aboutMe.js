@@ -3,10 +3,10 @@ import styled from "styled-components"
 import iomi from "../images/iomi.png"
 import { UserGraduate, IdBadge } from "styled-icons/fa-solid/"
 import Headline from "./utils/Headline"
-const AboutMe = props => {
+const AboutMe = () => {
   return (
     <StAboutMe>
-      <Headline title="About Me" />
+      <Headline title="About Me" id="me" />
       <StFlex>
         <StItem style={{ textAlign: "center" }}>
           <img src={iomi} alt="iman omidi" width="150px" />
@@ -61,7 +61,6 @@ const AboutMe = props => {
 export default AboutMe
 
 const StAboutMe = styled.div`
-  background-color: #eee;
   padding: 1px 0 0 0;
   margin: -1px auto 0 auto;
 `
@@ -98,7 +97,7 @@ const StItem = styled.div`
   }
 `
 const StFlex = styled.div`
-  background-color: #fff;
+  background-color: #eee;
   align-items: stretch;
   padding: 0;
   z-index: 0;

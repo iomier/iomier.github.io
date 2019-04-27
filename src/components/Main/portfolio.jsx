@@ -1,11 +1,7 @@
 import React from "react"
-
-import { StaticQuery, graphql, Link } from "gatsby"
-import Container from "react-bootstrap/Container"
-import Card from "react-bootstrap/Card"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Headline from "../utils/Headline"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby-plugin-modal-routing"
 
 const portfolio = ({ data }) => {
   return (
@@ -38,42 +34,62 @@ const portfolio = ({ data }) => {
         }
       `}
       render={data => (
-        <>
-          <Headline title="Portfolio" />
-          <Container className="portfo">
-            <Row>
-              <Col>
-                <div className="grid">
-                  {data.allMarkdownRemark.edges.map(edge => (
-                    <Card
-                      key={edge.node.id}
-                      style={{ border: "none" }}
-                      className="m-1"
-                    >
-                      <Card.Img
-                        variant="top"
-                        src={
-                          edge.node.frontmatter.feature.childImageSharp.fluid
-                            .src
-                        }
-                      />
-                      <Card.Body>
-                        <Card.Title>
-                          <Link to={edge.node.frontmatter.path}>
-                            {edge.node.frontmatter.title}
-                          </Link>
-                        </Card.Title>
-                      </Card.Body>
-                    </Card>
-                  ))}
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </>
+        <StPortGrid>
+          {data.allMarkdownRemark.edges.map(edge => (
+            <StLink key={edge.node.id} to={edge.node.frontmatter.path} asModal>
+              <div>
+                <img
+                  src={edge.node.frontmatter.feature.childImageSharp.fluid.src}
+                  alt={edge.node.frontmatter.title}
+                />
+              </div>
+              <h3>{edge.node.frontmatter.title}</h3>
+            </StLink>
+          ))}
+        </StPortGrid>
       )}
     />
   )
 }
 
 export default portfolio
+
+const StPortGrid = styled.div`
+  background-color: #eee;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  padding: 4em;
+  img {
+    width: inherit;
+  }
+  a {
+    text-align: center;
+  }
+`
+const StLink = styled(Link)`
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  border: 1px solid #eee;
+  padding: 0.5em;
+  color: #333;
+  background-color: #fff;
+  font-weight: 600;
+  transition: 0.6s;
+  &:hover {
+    filter: grayscale(100);
+  }
+  div {
+    width: 100%;
+  }
+  img {
+    display: block;
+  }
+  h3 {
+    background-color: #bada55;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0;
+    margin-top: 10px;
+  }
+`

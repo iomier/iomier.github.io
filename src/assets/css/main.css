@@ -1,11 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif:700|Rammetto+One");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:700|Rammetto+One|Kaushan+Script|Reenie+Beanie");
 body {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(111, 219, 246, 0.54) 0%,
-    rgba(111, 219, 246, 0.64) 21%,
-    rgba(109, 102, 183, 1) 100%
-  );
 }
 
 html {
@@ -14,7 +8,9 @@ html {
 h1 {
   font-family: "Noto Serif", serif;
 }
-
+h2 {
+  font-family: "Kaushan Script", cursive;
+}
 .card {
   transition: box-shadow 0.5s ease;
 }

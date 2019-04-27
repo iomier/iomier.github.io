@@ -4,25 +4,23 @@ import styled, { keyframes } from "styled-components"
 const Tiles = props => {
   const { tilesData } = props
   return (
-    <div>
-      <StGrid inputWidth={props.inputWidth}>
-        {props.wik
-          ? tilesData.map(tile => (
-              <StTileWik key={tile.id}>
-                <img src={tile.image} alt="" />
-                <h4>{tile.name}</h4>
-                <p>{tile.text}</p>
-              </StTileWik>
-            ))
-          : tilesData.map(tile => (
-              <StTile key={tile.id}>
-                <img src={tile.image} alt="" />
-                <h4>{tile.name}</h4>
-                <p>{tile.text}</p>
-              </StTile>
-            ))}
-      </StGrid>
-    </div>
+    <StGrid inputWidth={props.inputWidth}>
+      {props.wik
+        ? tilesData.map(tile => (
+            <StTileWik key={tile.id}>
+              <img src={tile.image} alt="" />
+              <h5>{tile.name}</h5>
+              <p>{tile.text}</p>
+            </StTileWik>
+          ))
+        : tilesData.map(tile => (
+            <StTile key={tile.id}>
+              <img src={tile.image} alt="" />
+              <h5>{tile.name}</h5>
+              <p>{tile.text}</p>
+            </StTile>
+          ))}
+    </StGrid>
   )
 }
 
@@ -47,8 +45,8 @@ export const StTile = styled.div`
   img {
     height: 150px;
   }
-  h4 {
-    margin: 0;
+  h5 {
+    margin: 10px 0;
   }
   p {
     text-align: left;
@@ -93,7 +91,6 @@ const StTileWik = styled.div`
   border-radius: 10px;
   text-align: center;
   border: red;
-  background-color: #fff;
 
   img {
     height: 100px;
@@ -103,6 +100,9 @@ const StTileWik = styled.div`
   }
   p {
     text-align: left;
+  }
+  h5 {
+    margin: 10px 0;
   }
   &:hover {
   }

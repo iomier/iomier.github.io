@@ -18,10 +18,12 @@ Header.defaultProps = {
 
 export default Header
 const StHeader = styled.header`
+  width: 100%;
   color: #eee;
-  background-color: Black;
-  margin: 25px 0 0 0;
-  padding: 2em 1.5em;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: hsla(144, 83%, 0%, 0.5);
+  @media (max-width: 950px) {
+    //CSS
+    margin: 0;
+    border-radius: 0;
+  }
 `

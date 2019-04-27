@@ -12,6 +12,7 @@ const Main = () => {
       <WidTiles />
       <Headline title="What I Know" id="wik" />
       <Skills />
+      <Headline title="Portfolio" id="port" />
       <Portfolio />
     </StMain>
   )

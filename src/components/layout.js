@@ -9,8 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import codeoic from "../images/code.png"
 
-import Header from "./header"
 import Hero from "./Hero"
 
 import AboutMe from "./aboutMe"
@@ -30,11 +30,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <StHome>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Hero />
+        <Hero siteTitle={data.site.siteMetadata.title} />
         <AboutMe />
         <Main />
-        <div>{children}</div>
         <Footer />
       </StHome>
     )}
@@ -47,8 +45,10 @@ Layout.propTypes = {
 
 export default Layout
 const StHome = styled.div`
-  width: 65vw;
+  width: 100%;
   margin: 0 auto;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
+  background-attachment: fixed;
+  background-image: url(${codeoic});
+  background-position: top;
+  background-size: cover;
 `

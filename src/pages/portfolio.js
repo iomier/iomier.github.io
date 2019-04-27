@@ -8,7 +8,7 @@ import Portfolio from "../components/Main/portfolio"
 const SecondPage = () => (
   <>
     <Header />
-    <SEO title="Page two" />
+    <SEO title="Portfolio Page of iman omidi" />
 
     <Portfolio />
   </>

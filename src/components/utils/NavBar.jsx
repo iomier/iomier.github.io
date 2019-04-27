@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const NavBar = ({ siteTitle }) => {
   return (
     <StNavBar>
-      <Link to="/Logo" id="logo">
+      <Link to="#logo" id="logo">
         {siteTitle}
       </Link>
       <Link to="#">Home</Link>
@@ -17,6 +17,8 @@ const NavBar = ({ siteTitle }) => {
   )
 }
 const StNavBar = styled.nav`
+  padding: 2em 1.5em;
+
   a {
     color: white;
     display: block;
@@ -33,6 +35,7 @@ const StNavBar = styled.nav`
   #logo {
     font-size: 1.2em;
     font-weight: 600;
+    color: #bada55;
   }
   a:hover {
     color: #bada55;
