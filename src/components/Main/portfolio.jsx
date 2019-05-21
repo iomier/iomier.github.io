@@ -2,29 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-modal-routing"
-
+import Img from "gatsby-image"
 const portfolio = ({ data }) => {
   return (
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-          ) {
+          allSanityPortfolio(sort: { fields: [_updatedAt], order: DESC }) {
             edges {
               node {
-                id
-                frontmatter {
-                  title
-                  path
-                  date
-                  excerpt
-                  feature {
-                    publicURL
-                    childImageSharp {
-                      fluid {
-                        src
-                      }
+                slug {
+                  current
+                }
+                title
+                mainImage {
+                  asset {
+                    fluid(maxWidth: 800) {
+                      ...GatsbySanityImageFluid
                     }
                   }
                 }
@@ -35,15 +29,12 @@ const portfolio = ({ data }) => {
       `}
       render={data => (
         <StPortGrid>
-          {data.allMarkdownRemark.edges.map(edge => (
-            <StLink key={edge.node.id} to={edge.node.frontmatter.path} asModal>
+          {data.allSanityPortfolio.edges.map(edge => (
+            <StLink key={edge.node.title} to={edge.node.slug.current} asModal>
               <div>
-                <img
-                  src={edge.node.frontmatter.feature.childImageSharp.fluid.src}
-                  alt={edge.node.frontmatter.title}
-                />
+                <Img fluid={edge.node.mainImage.asset.fluid} />
               </div>
-              <h3>{edge.node.frontmatter.title}</h3>
+              <h3>{edge.node.title}</h3>
             </StLink>
           ))}
         </StPortGrid>

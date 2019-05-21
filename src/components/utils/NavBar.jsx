@@ -12,7 +12,7 @@ const NavBar = ({ siteTitle }) => {
       <Link to="#wid">What I Do</Link>
       <Link to="#wik">What I Know</Link>
       <Link to="#port">Portfolio</Link>
-      <a href="http://iomi.ir/appList/">Github Demo</a>
+      <a href="http://iomier.github.io/appList/">Github Demo</a>
     </StNavBar>
   )
 }

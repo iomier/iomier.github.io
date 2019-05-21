@@ -18,6 +18,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "06egua29",
+        dataset: "blog",
+      },
+    },
     `gatsby-plugin-modal-routing`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,

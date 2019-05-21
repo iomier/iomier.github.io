@@ -6,4 +6,4 @@ feature: "./eduapp.png"
 excerpt: "build by react.js"
 ---
 
-##### [Go to APP](http://iomi.ir/eduapp)
+##### [Go to APP](http://iomier.github.io/eduapp)
