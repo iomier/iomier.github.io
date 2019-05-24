@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{196:function(e,a,n){"use strict";n.r(a);var t=n(2),l=n.n(t),o=n(238),r=n(236),i=n(230);a.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(o.a,null),l.a.createElement(r.a,{title:"Portfolio Page of iman omidi"}),l.a.createElement(i.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-portfolio-js-0f5f1d0e8c7f4b382093.js.map
