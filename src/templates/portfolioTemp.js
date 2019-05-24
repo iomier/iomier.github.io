@@ -34,7 +34,7 @@ export default ({ data }) => {
           <Img fluid={portfolio.mainImage.asset.fluid} alt={portfolio.title} />
         </div>
       </div>
-      <StPost>{portfolio.desc.sanityChildren.text}</StPost>
+
       {/* <StPost dangerouslySetInnerHTML={{ __html: post.html }} /> */}
     </StModal>
   )
@@ -77,16 +77,16 @@ const StModal = styled.div`
     border-radius: inherit;
   }
 `
-const StPost = styled.div`
-  background-color: #eee;
-  margin: 0;
-  padding: 2em;
-  .btn {
-    background-color: #bada55;
-    color: #eee;
-    border: 1px solid #333;
-  }
-`
+// const StPost = styled.div`
+//   background-color: #eee;
+//   margin: 0;
+//   padding: 2em;
+//   .btn {
+//     background-color: #bada55;
+//     color: #eee;
+//     border: 1px solid #333;
+//   }
+// `
 const StClose = styled(Link)`
   color: #000;
   background-color: #eee;

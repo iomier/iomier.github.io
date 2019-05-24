@@ -3,6 +3,7 @@ import styled from "styled-components"
 import iomi from "../images/iomi.png"
 import { UserGraduate, IdBadge } from "styled-icons/fa-solid/"
 import Headline from "./utils/Headline"
+
 const AboutMe = () => {
   return (
     <StAboutMe>
@@ -49,7 +50,10 @@ const AboutMe = () => {
               Phone: <span>+989214544518</span>
             </li>
             <li>
-              Resume: <span>Jobinja</span>
+              Resume:{" "}
+              <a href="https://files.jjcloudservices.com/files/uploads/documents/8cd26902-6f6c-11e9-8f9f-d6b790452c1a_2effa93c-b9e6-4aa3-a358-1745992f1082.pdf">
+                Click Here
+              </a>
             </li>
           </ul>
         </StItem>
