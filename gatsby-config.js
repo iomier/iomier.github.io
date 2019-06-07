@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `iomi.ir`,
+    title: `iomi`,
     description: `Iman Omidi personal blog built via GatsbyJs`,
     author: `@iomi`,
   },
@@ -28,13 +28,13 @@ module.exports = {
     `gatsby-plugin-modal-routing`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown`,
-        path: `${__dirname}/src/markdown`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `markdown`,
+    //     path: `${__dirname}/src/markdown`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

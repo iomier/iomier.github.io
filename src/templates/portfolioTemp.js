@@ -21,11 +21,13 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Headline from "../components/utils/Headline"
+import Seo from "../components/seo"
 
 export default ({ data }) => {
   const portfolio = data.sanityPortfolio
   return (
     <StModal>
+      <Seo title={portfolio.title} />
       <div>
         <Headline isPost={true} title={portfolio.title} />
         <StClose to="#port">Back to Portfolio</StClose>

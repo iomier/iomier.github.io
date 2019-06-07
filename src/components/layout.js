@@ -31,6 +31,7 @@ const Layout = ({ children }) => (
     render={data => (
       <StHome>
         <Hero siteTitle={data.site.siteMetadata.title} />
+        {console.log(data.site.siteMetadata.title)}
         <AboutMe />
         <Main />
         <Footer />
