@@ -20,10 +20,20 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import BlockContent from "@sanity/block-content-to-react"
 import Headline from "../components/utils/Headline"
 import Seo from "../components/seo"
 
 export default ({ data }) => {
+  const serializers = {
+    types: {
+      code: ({ node }) => (
+        <pre data-language={node.language}>
+          <code>{node.code}</code>
+        </pre>
+      ),
+    },
+  }
   const portfolio = data.sanityPortfolio
   return (
     <StModal>
@@ -31,12 +41,37 @@ export default ({ data }) => {
       <div>
         <Headline isPost={true} title={portfolio.title} />
         <StClose to="#port">Back to Portfolio</StClose>
+        <div className="flex-wrapper">
+          <Img
+            style={{ width: "48%" }}
+            fluid={portfolio.mainImage.asset.fluid}
+            alt={portfolio.title}
+          />
 
-        <div className="postimage">
-          <Img fluid={portfolio.mainImage.asset.fluid} alt={portfolio.title} />
+          <div style={{ width: "48%" }} className="meta">
+            <ul>
+              <li>
+                Title: <strong>{portfolio.title}</strong>
+              </li>
+              <li>
+                Keywords: <strong>{portfolio.keywords}</strong>
+              </li>
+              <li>
+                Language: <strong>{portfolio.language}</strong>
+              </li>
+              <li>
+                Link: <strong>{portfolio.URL}</strong>
+              </li>
+              {portfolio._rawDesc ? (
+                <BlockContent
+                  blocks={portfolio._rawDesc}
+                  serializers={serializers}
+                />
+              ) : null}
+            </ul>
+          </div>
         </div>
       </div>
-
       {/* <StPost dangerouslySetInnerHTML={{ __html: post.html }} /> */}
     </StModal>
   )
@@ -45,12 +80,12 @@ export default ({ data }) => {
 export const blogPostQuery = graphql`
   query($slug: String) {
     sanityPortfolio(slug: { current: { eq: $slug } }) {
+      id
       title
-      desc {
-        sanityChildren {
-          text
-        }
-      }
+      keywords
+      language
+      URL
+      _rawDesc
       mainImage {
         asset {
           fluid {
@@ -66,6 +101,13 @@ const StModal = styled.div`
   width: 100%;
   margin: 0;
   background-color: #fff;
+  .flex-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .meta {
+    margin: 0 1em;
+  }
   .postimage {
     border-radius: 12px;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);

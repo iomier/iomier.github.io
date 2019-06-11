@@ -15,6 +15,7 @@ const portfolio = ({ data }) => {
                   current
                 }
                 title
+                _rawDesc
                 mainImage {
                   asset {
                     fluid(maxWidth: 800) {
